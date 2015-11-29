@@ -15,7 +15,7 @@ import static junit.framework.Assert.assertTrue;
  */
 public class HomePageStepDefs {
     public VehicleModel vehicleModel;
-    public HomePage hp;
+    public HomePage hp = new HomePage();
 
     public HomePageStepDefs(VehicleStepDefs vehicleStepDefs) {
         this.vehicleModel = vehicleStepDefs.vehicleModel;
@@ -33,7 +33,6 @@ public class HomePageStepDefs {
 
     @Given("^I am on the Home page$")
     public void I_am_on_the_Home_page() throws Throwable {
-        hp = new HomePage();
         hp.goToPage();
     }
 

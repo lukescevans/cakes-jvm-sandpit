@@ -4,7 +4,6 @@ Feature: Belly
     Given I have 42 cukes in my belly
     When I eat 2 cukes
     Then I should have 40 cukes in my belly
-    Then the page title should contain "Gumtree"
 
     Scenario: enter search term
     Given I am on the Home page
