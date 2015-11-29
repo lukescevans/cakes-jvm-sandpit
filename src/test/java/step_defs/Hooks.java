@@ -1,8 +1,9 @@
-package pages;
+package step_defs;
 
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
 import org.openqa.selenium.WebDriver;
+import pages.BasePage;
 
 /**
  * Created by lukescevans on 25/11/15.

@@ -8,7 +8,7 @@ public class Belly {
     }
 
     public void eat(int cukes) {
-        this.cukes -= cukes;
+        this.cukes += cukes;
     }
 
     public int getCukes() {
