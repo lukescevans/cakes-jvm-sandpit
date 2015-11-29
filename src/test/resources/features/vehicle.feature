@@ -11,6 +11,20 @@ Feature: Vehicle
     When I accelerate 100mph
     Then the vehicles speed is 100mph
 
+  Scenario: a vehicle is created and decelerates
+    Given a new vehicle is created
+    When I accelerate 100mph
+    Then the vehicles speed is 100mph
+    When I decelerate 100mph
+    Then the vehicles speed is 0mph
+
+  Scenario: a vehicle is created, accelerates then decelerates
+    Given a new vehicle is created
+    When I accelerate 10mph
+    Then the vehicles speed is 10mph
+    When I decelerate 5mph
+    Then the vehicles speed is 5mph
+
   Scenario: a vehicle is created and breaks down
     Given a new vehicle is created
     When I accelerate 3000mph

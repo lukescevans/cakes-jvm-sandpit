@@ -32,13 +32,13 @@ public class VehicleStepDefs {
 
     @Then("^the vehicles tank is full$")
     public void the_vehicles_tank_is_full() throws Throwable {
-        // Express the Regexp above with the code you wish you had
+
         assertTrue(this.vehicleModel.getIsFull());
     }
 
     @And("^there is no fuel in the tank$")
     public void there_is_no_fuel_in_the_tank() throws Throwable {
-        // Express the Regexp above with the code you wish you had
+
         assertFalse(this.vehicleModel.getIsFull());
     }
 
@@ -49,13 +49,13 @@ public class VehicleStepDefs {
 
     @Then("^the vehicles speed is (\\d+)mph$")
     public void the_vehicles_speed_is_mph(int speed) throws Throwable {
-        // Express the Regexp above with the code you wish you had
+
         assertEquals(vehicleModel.getCurrentSpeed(), speed);
     }
 
     @When("^my car passes the MOT$")
     public void my_car_passes_the_MOT() throws Throwable {
-        // Express the Regexp above with the code you wish you had
+
         motModel = new MotModel();
         motModel.setMotNumber(12345);
         vehicleModel.setMotModel(motModel);
@@ -63,7 +63,13 @@ public class VehicleStepDefs {
 
     @Then("^I get an MOT Number$")
     public void I_get_an_MOT_Number() throws Throwable {
-        // Express the Regexp above with the code you wish you had
+
         assertNotNull(vehicleModel.getMotModel().getMotNumber());
+    }
+
+    @When("^I decelerate (\\d+)mph$")
+    public void I_decelerate_mph(int speed) throws Throwable {
+        // Express the Regexp above with the code you wish you had
+        vehicleModel.changeCurrentSpeed(Integer.valueOf("-" + speed));
     }
 }

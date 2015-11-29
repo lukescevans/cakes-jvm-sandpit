@@ -53,6 +53,10 @@ public class VehicleModel {
         this.currentSpeed = currentSpeed;
     }
 
+    public void changeCurrentSpeed(int speed) {
+        this.currentSpeed += speed;
+    }
+
     public void accelerate(int mph) {
         this.currentSpeed = + mph;
     }
