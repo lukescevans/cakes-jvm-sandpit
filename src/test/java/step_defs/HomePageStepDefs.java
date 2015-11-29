@@ -36,7 +36,7 @@ public class HomePageStepDefs {
         hp.goToPage();
     }
 
-    @When("^I search for the search term \"([^\"]*)\"$")
+    @When("^I search for the term \"([^\"]*)\"$")
     public void I_search_for_the_term(String searchTerm) throws Throwable {
         hp.getTitle();
         hp.enterSearchTerm(searchTerm);

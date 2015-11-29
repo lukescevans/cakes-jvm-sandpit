@@ -37,7 +37,6 @@ public class PersonStepdefs {
 
     @When("^my parents name me \"([^\"]*)\" and I am (\\d+) years old$")
     public void my_parents_name_me_and_I_am_years_old(String name, int age) throws Throwable {
-        // Express the Regexp above with the code you wish you had
-        person = new Person("Luke", 35);
+        person = new Person(name, age);
     }
 }

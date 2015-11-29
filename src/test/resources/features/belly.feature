@@ -7,5 +7,5 @@ Feature: Belly
 
   Scenario: enter search term
     Given I am on the Home page
-    When I search for the search term "Honda Civic"
+    When I search for the term "Honda Civic"
     Then the page title should contain "Gumtree"
