@@ -12,13 +12,12 @@ public class Hooks extends BasePage {
 
     @Before
     public void setup() {
-        System.out.println("in BEFORE here");
-        //this.driver = new FirefoxDriver();
+        System.out.println("*BEFORE hook initialised");
     }
 
     @After
     public void tearDown() {
-        System.out.println("IN TEARDOWN");
+        System.out.println("*AFTER hook initialised");
         if (driver != null) {
             driver.close();
         }
