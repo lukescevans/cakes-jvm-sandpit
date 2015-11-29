@@ -18,8 +18,8 @@ public class HomePage extends BasePage {
         return this.driver.getTitle().toLowerCase();
     }
 
-    public void enterSearchTerm() {
-        this.driver.findElement(By.id("header-search-q")).sendKeys("honda civic");
+    public void enterSearchTerm(String searchTerm) {
+        this.driver.findElement(By.id("header-search-q")).sendKeys(searchTerm);
         System.out.println("wait");
     }
 

@@ -1,3 +1,9 @@
+# Versions
+
+Intellij plugins:
++ cucumber for java 141.178
++ gherkin 141.178
+
 # Cucumber-Java Skeleton
 
 This is the simplest possible build script setup for Cucumber using Java.
