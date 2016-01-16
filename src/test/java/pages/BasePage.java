@@ -16,6 +16,7 @@ public class BasePage {
 
     public BasePage() {
         this.driver = new FirefoxDriver();
+        this.driver.get("http://www.google.com/");
     }
 
     public void assertPageTitle(String needle) {

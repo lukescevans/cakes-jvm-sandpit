@@ -27,4 +27,14 @@ public class GarageStepDefs {
         assertTrue(vehicleModel.getIsBroken());
         this.vehicleModel.setCurrentSpeed(0);
     }
+
+    @When("^the vehicle is fixed$")
+    public void the_vehicle_is_fixed() throws Throwable {
+        this.vehicleModel.setIsBroken(false);
+    }
+
+    @Then("^the engine warning light goes out$")
+    public void theEngineWarningLightGoesOut() throws Throwable {
+        this.vehicleModel.setIsBroken(false);
+    }
 }

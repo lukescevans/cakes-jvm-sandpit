@@ -1,5 +1,7 @@
 package support;
 
+import java.util.IllformedLocaleException;
+
 /**
  * Created by lukescevans on 21/11/15.
  */
@@ -15,6 +17,7 @@ public class VehicleModel {
         this.isFull = false;
         this.currentSpeed = 0;
         this.isBroken = false;
+        this.motModel = new MotModel();
     }
 
     public String getMake() {
@@ -49,12 +52,23 @@ public class VehicleModel {
         return currentSpeed;
     }
 
-    public void setCurrentSpeed(int currentSpeed) {
+    public void setCurrentSpeed(int currentSpeed) throws Exception {
+        if (currentSpeed < 0) throw new Exception("Current speed can't be less than 0 mph nugget");
         this.currentSpeed = currentSpeed;
     }
 
-    public void changeCurrentSpeed(int speed) {
-        this.currentSpeed += speed;
+    public int changeCurrentSpeed(int speed) {
+        int calculatedSpeed = this.currentSpeed += speed;
+
+        if (calculatedSpeed >= 0) {
+            this.currentSpeed += speed;
+        }
+        else
+        {
+            this.currentSpeed = 0;
+        }
+
+        return this.currentSpeed;
     }
 
     public void accelerate(int mph) {

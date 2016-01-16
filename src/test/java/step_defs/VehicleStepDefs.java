@@ -49,27 +49,15 @@ public class VehicleStepDefs {
 
     @Then("^the vehicles speed is (\\d+)mph$")
     public void the_vehicles_speed_is_mph(int speed) throws Throwable {
-
         assertEquals(vehicleModel.getCurrentSpeed(), speed);
-    }
-
-    @When("^my car passes the MOT$")
-    public void my_car_passes_the_MOT() throws Throwable {
-
-        motModel = new MotModel();
-        motModel.setMotNumber(12345);
-        vehicleModel.setMotModel(motModel);
-    }
-
-    @Then("^I get an MOT Number$")
-    public void I_get_an_MOT_Number() throws Throwable {
-
-        assertNotNull(vehicleModel.getMotModel().getMotNumber());
     }
 
     @When("^I decelerate (\\d+)mph$")
     public void I_decelerate_mph(int speed) throws Throwable {
-        // Express the Regexp above with the code you wish you had
-        vehicleModel.changeCurrentSpeed(Integer.valueOf("-" + speed));
+        int current = vehicleModel.getCurrentSpeed();
+
+        int newSpeed = current - speed;
+
+        vehicleModel.setCurrentSpeed(newSpeed);
     }
 }
